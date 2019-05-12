@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { changeSearchWord } from '../../actions/filter.js';
+import { changeSearchQuery } from '../../actions/filter.js';
 import styles from './index.scss';
 
 const Header = (props) => {
@@ -21,7 +21,7 @@ const Header = (props) => {
             className={styles.header_search_input}
             placeholder="Explore your own activities"
             value={searchWord}
-            onChange={event => props.changeSearchWord(event.target.value)}
+            onChange={event => props.changeSearchQuery({ keyWord: event.target.value, })}
           />
         </div>
       </div>
@@ -30,21 +30,21 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  changeSearchWord: PropTypes.func,
+  changeSearchQuery: PropTypes.func,
   searchWord: PropTypes.string,
 };
 
 Header.defaultProps = {
-  changeSearchWord: () => { console.log('changeContentType'); },
+  changeSearchQuery: () => { console.log('changeSearchQuery'); },
   searchWord: '',
 };
 
 const mapStateToPorops = state => ({
-  searchWord: state.searchWord,
+  searchWord: state.searchQuery.keyWord,
 });
 
 const mapDispatchToProps = dispatch => ({
-  changeSearchWord: word => (dispatch(changeSearchWord(word))),
+  changeSearchQuery: query => (dispatch(changeSearchQuery(query))),
 });
 
 export default connect(mapStateToPorops, mapDispatchToProps)(Header);
