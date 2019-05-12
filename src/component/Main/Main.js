@@ -1,20 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Header from '../Header';
+import Content from '../Content';
 import styles from './index.scss';
 
-const Main = (props) => {
-  const { title, } = props;
-  return (
-    <h1 className={styles.title}>{title}</h1>
-  );
-};
-
-Main.propTypes = {
-  title: PropTypes.string,
-};
-
-Main.defaultProps = {
-  title: 'default',
-};
+const Main = () => (
+  <div className={styles.main_block}>
+    <Header />
+    <Content />
+  </div>
+);
 
 export default Main;
