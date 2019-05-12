@@ -1,0 +1,23 @@
+.content_block {
+  background: #F2F2F2;
+}
+
+.side_search_block {
+  @extend .content_block;
+
+  .search_block {
+    font-size: 20px;
+    width: 300px;
+    margin-left: 35px;
+    background: #EBEBEB;
+
+    .search_content {
+      padding:24 35;
+    }
+  }
+}
+
+.content_data_block {
+  @extend .content_block;
+}
+
