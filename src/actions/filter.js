@@ -9,10 +9,10 @@ export const changeSearchQuery = query => ({
 
 export const FETCH_DATA = 'FETCH_DATA';
 
-const fetchDataSuccess = dataList => ({
+const fetchDataSuccess = originDataList => ({
   type: FETCH_DATA,
   payload: {
-    dataList,
+    originDataList,
   },
 });
 
@@ -44,3 +44,12 @@ export const fetchData = dispatch => (
       })
   )
 );
+
+export const FILTER_DATA = 'FILTER_DATA';
+
+export const filterData = query => ({
+  type: FILTER_DATA,
+  payload: {
+    query,
+  },
+});

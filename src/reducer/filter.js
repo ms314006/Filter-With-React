@@ -1,4 +1,4 @@
-import { CHANGE_SEARCH_QUERY, FETCH_DATA } from '../actions/filter.js';
+import { CHANGE_SEARCH_QUERY, FETCH_DATA, FILTER_DATA } from '../actions/filter.js';
 
 const initialState = {
   searchQuery: {
@@ -6,7 +6,8 @@ const initialState = {
     free: '',
     allDayOpen: false,
   },
-  dataList: [],
+  originDataList: [],
+  filterDataList: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,8 +23,16 @@ const reducer = (state = initialState, action) => {
     case FETCH_DATA:
       return {
         ...state,
-        dataList: action.payload.dataList,
+        originDataList: action.payload.originDataList,
+        filterDataList: action.payload.originDataList.slice(0, 10),
       };
+    case FILTER_DATA: {
+      const { page, pageSize, } = action.payload.query;
+      return {
+        ...state,
+        filterDataList: state.originDataList.slice((page - 1) * pageSize, pageSize * page),
+      };
+    }
     default:
       return state;
   }
