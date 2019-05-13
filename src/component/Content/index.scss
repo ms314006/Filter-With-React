@@ -12,7 +12,8 @@
     background: #EBEBEB;
 
     .search_content {
-      padding:24 35;
+      padding:24 35 12;
+      border-bottom: 1px solid #D7D7D7;
     }
   }
 }
@@ -21,3 +22,14 @@
   @extend .content_block;
 }
 
+.content_query_block {
+  margin: 15 0;
+  font-size: 16px;
+}
+
+.search_free_option {
+  @extend .content_query_block;
+  width: 220px;
+  height: 40px;
+  border: none;
+}
