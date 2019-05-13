@@ -20,10 +20,6 @@ const reducer = (state = initialState, action) => {
         },
       };
     case FETCH_DATA:
-    console.log({
-      ...state,
-      dataList: action.payload.dataList,
-    })
       return {
         ...state,
         dataList: action.payload.dataList,
