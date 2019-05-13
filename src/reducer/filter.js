@@ -3,6 +3,8 @@ import { CHANGE_SEARCH_QUERY, FETCH_DATA } from '../actions/filter.js';
 const initialState = {
   searchQuery: {
     keyWord: '',
+    free: '',
+    allDayOpen: false,
   },
   dataList: [],
 };
