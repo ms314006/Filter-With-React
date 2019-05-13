@@ -15,6 +15,8 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
+            babelrc: true,
+            cacheDirectory: true,
           },
         },
       },
@@ -29,6 +31,19 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        include: path.resolve(__dirname, './node_modules'),
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+          }
+        ],
+      },
+      {
+        test: /\.css$/,
+        exclude: path.resolve(__dirname, './node_modules'),
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
