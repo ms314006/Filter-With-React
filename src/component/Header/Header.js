@@ -44,7 +44,7 @@ const mapStateToPorops = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  changeSearchQuery: query => (dispatch(changeSearchQuery(query))),
+  changeSearchQuery: query => dispatch(changeSearchQuery(query)),
 });
 
 export default connect(mapStateToPorops, mapDispatchToProps)(Header);
