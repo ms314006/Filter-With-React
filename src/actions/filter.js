@@ -37,9 +37,9 @@ export const fetchData = dispatch => (
   () => (
     fakeGetData()
       .then((json) => {
-        const content = {
-          ...json.result.records,
-        };
+        const content = [
+          ...json.result.records
+        ];
         dispatch(fetchDataSuccess(content));
       })
   )
