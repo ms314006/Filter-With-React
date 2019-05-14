@@ -1,0 +1,27 @@
+.side_search_block {
+  background: #F2F2F2;
+
+  .search_block {
+    font-size: 20px;
+    width: 300px;
+    margin-left: 35px;
+    background: #EBEBEB;
+
+    .search_content {
+      padding:24px 35px 12px;
+      border-bottom: 1px solid #D7D7D7;
+    }
+  }
+}
+
+.content_query_block {
+  margin: 15px 0px;
+  font-size: 16px;
+}
+
+.search_free_option {
+  @extend .content_query_block;
+  width: 220px;
+  height: 40px;
+  border: none;
+}
