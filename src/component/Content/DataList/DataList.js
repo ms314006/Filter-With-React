@@ -41,7 +41,6 @@ const DataList = (props) => {
 DataList.propTypes = {
   page: PropTypes.number,
   pageSize: PropTypes.number,
-  originDataList: PropTypes.arrayOf(PropTypes.shape({})),
   filterDataList: PropTypes.arrayOf(PropTypes.shape({})),
   fetchData: PropTypes.func,
   changeSearchQuery: PropTypes.func,
@@ -50,7 +49,6 @@ DataList.propTypes = {
 DataList.defaultProps = {
   page: 1,
   pageSize: 10,
-  originDataList: [],
   filterDataList: [],
   fetchData: () => {},
   changeSearchQuery: () => {},
