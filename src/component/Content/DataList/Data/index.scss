@@ -15,10 +15,12 @@
   margin: 24px 20px;
 
   .name_block {
-    margin-bottom: 16px;
-    font-size: 24px;
-    color: #9013FE;
-    line-height: 36px;
+    a {
+      margin-bottom: 16px;
+      font-size: 24px;
+      color: #9013FE;
+      line-height: 36px;
+    }
   }
 
   .description_block {

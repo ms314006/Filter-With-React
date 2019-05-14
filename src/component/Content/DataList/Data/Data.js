@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Tag } from 'antd';
 import styles from './index.scss';
 
@@ -12,7 +13,7 @@ const Data = (props) => {
       </div>
       <div className={styles.content_block}>
         <div className={styles.name_block}>
-          {data.Name}
+          <Link to={`/informaction/${data.Id}`}>{data.Name}</Link>
         </div>
         <div className={styles.description_block}>
           {`${data.Description.slice(0, 60)}...`}
