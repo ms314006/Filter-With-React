@@ -1,6 +1,6 @@
 import React from 'react';
-import SideSearchBlock from './SideSearchBlock.js';
-import DataList from './DataList.js';
+import SideSearchBlock from './SideSearchBlock';
+import DataList from './DataList';
 
 const Content = () => (
   <>
