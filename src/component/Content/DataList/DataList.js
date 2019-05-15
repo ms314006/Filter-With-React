@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Pagination } from 'antd';
 import Data from './Data';
-import { fetchData, changeSearchQuery } from '../../../actions/filter.js';
+import { changeSearchQuery } from '../../../actions/filter.js';
 import styles from './index.scss';
 
 const DataList = (props) => {
@@ -12,9 +12,7 @@ const DataList = (props) => {
     page,
     pageSize,
   } = props;
-  useEffect(() => {
-    props.fetchData();
-  }, []);
+
   return (
     <div className={styles.content_data_block}>
       <div className={styles.search_count_text}>
@@ -42,7 +40,6 @@ DataList.propTypes = {
   page: PropTypes.number,
   pageSize: PropTypes.number,
   filterDataList: PropTypes.arrayOf(PropTypes.shape({})),
-  fetchData: PropTypes.func,
   changeSearchQuery: PropTypes.func,
 };
 
@@ -50,7 +47,6 @@ DataList.defaultProps = {
   page: 1,
   pageSize: 10,
   filterDataList: [],
-  fetchData: () => {},
   changeSearchQuery: () => {},
 };
 
@@ -62,7 +58,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchData: fetchData(dispatch),
   changeSearchQuery: query => dispatch(changeSearchQuery(query)),
 });
 
