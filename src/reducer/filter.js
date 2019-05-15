@@ -1,4 +1,4 @@
-import { CHANGE_SEARCH_QUERY, FETCH_DATA, FILTER_DATA } from '../actions/filter.js';
+import { CHANGE_SEARCH_QUERY, FETCH_DATA } from '../actions/filter.js';
 
 const initialState = {
   searchQuery: {
@@ -29,7 +29,7 @@ const reducer = (state = initialState, action) => {
       } else if (newQuery.free === 'N') {
         filterDataList = filterDataList.filter(data => data.Ticketinfo !== '免費參觀' && data.Ticketinfo !== '');
       }
-      
+
       if (newQuery.allDayOpen) {
         filterDataList = filterDataList.filter(data => data.Opentime === '全天候開放');
       }
@@ -47,13 +47,6 @@ const reducer = (state = initialState, action) => {
         originDataList: action.payload.originDataList,
         filterDataList: action.payload.originDataList,
       };
-    case FILTER_DATA: {
-      const { page, pageSize, } = action.payload.query;
-      return {
-        ...state,
-        filterDataList: state.originDataList.slice((page - 1) * pageSize, pageSize * page),
-      };
-    }
     default:
       return state;
   }

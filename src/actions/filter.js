@@ -44,12 +44,3 @@ export const fetchData = dispatch => (
       })
   )
 );
-
-export const FILTER_DATA = 'FILTER_DATA';
-
-export const filterData = query => ({
-  type: FILTER_DATA,
-  payload: {
-    query,
-  },
-});
