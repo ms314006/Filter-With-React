@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 
 const Information = (props) => {
-  const { match, } = props;
-  return (<h1>{match.params.Id}</h1>);
+  const { match, originDataList, } = props;
+  const [information, changeInformation] = useState({
+    Name: '',
+  });
+
+  useEffect(() => {
+    const targetInformation = originDataList.find(data => data.Id === match.params.Id);
+    if (targetInformation) {
+      changeInformation(targetInformation);
+    }
+  });
+
+  return (<h1>{information.Name}</h1>);
 };
 
-export default Information;
+const mapStateToProps = state => ({
+  originDataList: state.originDataList,
+});
+
+export default connect(mapStateToProps)(Information);
