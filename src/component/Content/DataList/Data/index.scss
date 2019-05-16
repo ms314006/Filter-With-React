@@ -1,7 +1,6 @@
 .data_block {
   display: flex;
-  height: 220px;
-  width: 780px;
+  width: 100%;
   background-color: #FFFFFF;
   margin-bottom: 24px;
 }
@@ -32,6 +31,9 @@
 
   .detail_block {
     color: #9B9B9B;
+    div {
+      display: inline-block;
+    }
     i {
       margin: 0px 10px; 
       color: #000000;
@@ -47,5 +49,27 @@
       color: #FFFFFF;
       background: #D7D7D7;
       border-radius: 30px;
+  }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .data_block {
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+  }
+  .image_block {
+    height: 200px;
+    width: 100%;
+  }
+
+  .detail_block {
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      width: 100%;
+      display: block;
+    }
   }
 }

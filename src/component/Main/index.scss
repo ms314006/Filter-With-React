@@ -5,3 +5,9 @@
   grid-template-rows: 92px;
   grid-template-columns: 380px;
 }
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .main_block {
+    grid-template-columns: 340px;
+  }
+}
