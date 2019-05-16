@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Pagination } from 'antd';
+import { Pagination, Tag } from 'antd';
 import Data from './Data';
 import { changeSearchQuery } from '../../../actions/filter.js';
 import styles from './index.scss';
@@ -11,6 +11,8 @@ const DataList = (props) => {
     filterDataList,
     page,
     pageSize,
+    free,
+    allDayOpen,
   } = props;
 
   return (
@@ -24,14 +26,34 @@ const DataList = (props) => {
         </span>
         results by…
       </div>
+      <div className={styles.seatch_tag_block}>
+        { free !== ''
+          ? (
+            <Tag closable onClose={() => { props.changeSearchQuery({ free: '', }); }}>
+              {free === 'Y' ? '免費入場' : '需付費入場'}
+            </Tag>
+          )
+          : null
+        }
+        { allDayOpen
+          ? (
+            <Tag closable onClose={() => { props.changeSearchQuery({ allDayOpen: false, }); }}>
+              全天候開放
+            </Tag>
+          )
+          : null
+        }
+      </div>
       {
         filterDataList.slice((page - 1) * pageSize, page * pageSize).map(data => <Data key={data.Id} data={data} />)
       }
-      <Pagination
-        defaultCurrent={1}
-        total={filterDataList.length}
-        onChange={(page, pageSize) => { props.changeSearchQuery({ page, pageSize, }); }}
-      />
+      <div className={styles.pagination_block}>
+        <Pagination
+          defaultCurrent={1}
+          total={filterDataList.length}
+          onChange={(page, pageSize) => { props.changeSearchQuery({ page, pageSize, }); }}
+        />
+      </div>
     </>
   );
 };
@@ -39,6 +61,8 @@ const DataList = (props) => {
 DataList.propTypes = {
   page: PropTypes.number,
   pageSize: PropTypes.number,
+  free: PropTypes.string,
+  allDayOpen: PropTypes.bool,
   filterDataList: PropTypes.arrayOf(PropTypes.shape({})),
   changeSearchQuery: PropTypes.func,
 };
@@ -46,6 +70,8 @@ DataList.propTypes = {
 DataList.defaultProps = {
   page: 1,
   pageSize: 10,
+  free: '',
+  allDayOpen: false,
   filterDataList: [],
   changeSearchQuery: () => {},
 };
@@ -53,6 +79,8 @@ DataList.defaultProps = {
 const mapStateToProps = state => ({
   page: state.searchQuery.page,
   pageSize: state.searchQuery.pageSize,
+  free: state.searchQuery.free,
+  allDayOpen: state.searchQuery.allDayOpen,
   originDataList: state.originDataList,
   filterDataList: state.filterDataList,
 });

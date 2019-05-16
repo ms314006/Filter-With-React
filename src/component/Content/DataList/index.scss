@@ -1,5 +1,5 @@
 .search_count_text {
-  padding: 24px 0px 10px 0px;
+  padding: 24px 0px 0px 0px;
   color: #000000;
   font-size: 24px;
 }
@@ -7,4 +7,45 @@
 .search_result_count {
   color: #7828B4;
   line-height: 28px;
+}
+
+.seatch_tag_block {
+  margin: 12px 0px 12px 0px;
+
+  div {
+    padding: 5px;
+    border: 1px solid #9013FE;
+    border-radius: 100px;
+    font-size: 16px;
+    color: #9013FE;
+
+    i {
+      border: 1px solid #9013FE;
+      border-radius: 100px;
+  
+      svg {
+        color: #9013FE;
+      }
+    }
+  }
+
+  div:hover {
+    background: #9013FE;
+    color: #FFFFFF;
+
+    i {
+      border: 1px solid #FFFFFF;
+      background: #9013FE;
+      color: #FFFFFF;
+  
+      svg {
+        color: #FFFFFF;
+      }
+    }
+  }
+
+}
+
+.pagination_block {
+  margin: 24px 0px;
 }
