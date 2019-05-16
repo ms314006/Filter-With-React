@@ -30,7 +30,7 @@ const SideSearchBlock = (props) => {
           <div className={styles.content_query_block}>
             <input
               type="checkbox"
-              value={allDayOpen}
+              checked={allDayOpen}
               onChange={(e) => {
                 props.changeQuery({ allDayOpen: e.target.checked, });
               }}
