@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Pagination } from 'antd';
@@ -14,7 +14,7 @@ const DataList = (props) => {
   } = props;
 
   return (
-    <div className={styles.content_data_block}>
+    <>
       <div className={styles.search_count_text}>
         Showing
         <span className={styles.search_result_count}>
@@ -32,7 +32,7 @@ const DataList = (props) => {
         total={filterDataList.length}
         onChange={(page, pageSize) => { props.changeSearchQuery({ page, pageSize, }); }}
       />
-    </div>
+    </>
   );
 };
 

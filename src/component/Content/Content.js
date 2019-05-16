@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import SideSearchBlock from './SideSearchBlock';
 import DataList from './DataList';
-import Information from '../Information';
+import Information from './Information';
 import { fetchData } from '../../actions/filter.js';
+import styles from './index.scss';
 
 const Content = (props) => {
   useEffect(() => {
@@ -15,12 +17,22 @@ const Content = (props) => {
       <SideSearchBlock />
       <HashRouter>
         <Switch>
-          <Route exact path="/" component={DataList} />
-          <Route path="/informaction/:Id" component={Information} />
+          <div className={styles.content_data_block}>
+            <Route exact path="/" component={DataList} />
+            <Route path="/informaction/:Id" component={Information} />
+          </div>
         </Switch>
       </HashRouter>
     </>
   );
+};
+
+Information.propTypes = {
+  fetchData: PropTypes.func,
+};
+
+Information.defaultProps = {
+  fetchData: () => {},
 };
 
 const mapDispatchToState = dispatch => ({
