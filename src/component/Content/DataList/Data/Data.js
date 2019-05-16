@@ -22,9 +22,9 @@ const Data = (props) => {
           <Tag className={styles.zone_tag}>{data.Zone}</Tag>
         </div>
         <div className={styles.detail_block}>
-          <i className={`fas fa-map-marker-alt ${styles.icon_margin_left}`} />
+          <i className="fas fa-map-marker-alt" />
           {data.Add}
-          <i className={`far fa-calendar-alt ${styles.icon_margin_left}`} />
+          <i className="far fa-calendar-alt" />
           {data.Opentime}
         </div>
       </div>
