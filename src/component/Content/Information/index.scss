@@ -20,14 +20,35 @@
   .information_content_block {
     background: #FFFFFF;
 
+    i {
+      margin: 0px 10px; 
+      color: #000000;
+    }
+
     .image_block {
       width: 100%;
       height: 352px;
     }
+    .main_block {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
 
-    .name_block {
-      font-size: 36px;
-      color: #9013FE;
+      .main_information_block {
+        width: 650px;
+
+        .name_block {
+          margin: 24px 0px;
+          font-size: 36px;
+          color: #9013FE;
+        }
+
+        .description_block {
+          margin: 24px 0px;
+          font-size: 16px;
+          color: #000000;
+        }
+      }
     }
   }
 }
