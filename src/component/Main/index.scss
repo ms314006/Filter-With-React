@@ -17,11 +17,12 @@
 
 @media screen and (min-width: 0px) and (max-width: 700px) {
   .main_block {
-    grid-template-rows: 69px 69px;
+    grid-template-rows: 69px 69px auto auto;
     grid-template-columns: 0px;
     grid-template-areas:
       "header_title header_title"
       "header_search header_search"
+      "rwd_content_search rwd_content_search"
       "content_block content_block";
   }
 }
