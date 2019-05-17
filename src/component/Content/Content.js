@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import SideSearchBlock from './SideSearchBlock';
+import TopSearchBlock from './TopSearchBlock';
 import DataList from './DataList';
 import Information from './Information';
 import { fetchData } from '../../actions/filter.js';
@@ -15,6 +16,7 @@ const Content = (props) => {
   return (
     <>
       <SideSearchBlock />
+      <TopSearchBlock />
       <HashRouter>
         <div className={styles.content_data_block}>
           <Switch>
