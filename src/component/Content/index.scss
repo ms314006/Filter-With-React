@@ -1,4 +1,11 @@
 .content_data_block {
-    background: #F2F2F2;
-    padding-right: 40px; 
+  background: #F2F2F2;
+  padding-right: 40px; 
+  grid-area: content_block;
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px) {
+  .content_data_block {
+    padding-left: 40px;
   }
+}

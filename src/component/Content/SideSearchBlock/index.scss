@@ -1,5 +1,6 @@
 .side_search_block {
   background: #F2F2F2;
+  grid-area: content_search;
 
   .search_block {
     font-size: 20px;
@@ -14,14 +15,6 @@
   }
 }
 
-@media screen and (min-width: 0px) and (max-width: 1000px) {
-  .side_search_block {
-    .search_block {
-      margin-left: 0px;
-    }
-  }
-}
-
 .content_query_block {
   margin: 15px 0px;
   font-size: 16px;
@@ -32,4 +25,18 @@
   width: 220px;
   height: 40px;
   border: none;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+  .side_search_block {
+    .search_block {
+      margin-left: 0px;
+    }
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px) {
+  .side_search_block {
+    display: none;
+  }
 }

@@ -4,10 +4,24 @@
   display: grid;
   grid-template-rows: 92px;
   grid-template-columns: 380px;
+  grid-template-areas:
+    "header_title header_search"
+    "content_search content_block";
 }
 
-@media screen and (min-width: 0px) and (max-width: 1000px) {
+@media screen and (min-width: 700px) and (max-width: 1000px) {
   .main_block {
     grid-template-columns: 340px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px) {
+  .main_block {
+    grid-template-rows: 69px 69px;
+    grid-template-columns: 0px;
+    grid-template-areas:
+      "header_title header_title"
+      "header_search header_search"
+      "content_block content_block";
   }
 }
