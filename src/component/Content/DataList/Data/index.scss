@@ -6,8 +6,11 @@
 }
 
 .image_block {
-  height: 100%;
-  width: 220px;
+  height: auto;
+  width: 520px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover; 
 }
 
 .content_block{

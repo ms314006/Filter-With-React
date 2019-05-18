@@ -8,9 +8,7 @@ const Data = (props) => {
   const { data, } = props;
   return (
     <div className={styles.data_block}>
-      <div>
-        <img className={styles.image_block} src={data.Picture1} alt="" />
-      </div>
+      <div className={styles.image_block} style={{ backgroundImage: `url(${data.Picture1})`, }} />
       <div className={styles.content_block}>
         <div className={styles.name_block}>
           <Link to={`/informaction/${data.Id}`}>{data.Name}</Link>
