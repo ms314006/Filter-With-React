@@ -37,6 +37,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-import": "^1.11.0",
+    "coveralls": "^3.0.3",
     "css-loader": "^1.0.1",
     "eslint": "^5.15.2",
     "eslint-config-airbnb": "^17.1.0",
