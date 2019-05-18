@@ -23,6 +23,8 @@
 
   .open_panel_search {
     display: flex;
+    transition: flex-basis 0.5s;
+    transition: all .2s ease-in-out; 
   };
   
   .close_panel_search {
