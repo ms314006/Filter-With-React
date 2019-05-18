@@ -8,6 +8,7 @@ const AllDayOpenCheckBox = (props) => {
   return (
     <>
       <input
+        data-testid="allDayOpen"
         type="checkbox"
         checked={allDayOpen}
         onChange={(e) => {
@@ -21,7 +22,7 @@ const AllDayOpenCheckBox = (props) => {
 
 AllDayOpenCheckBox.propTypes = {
   allDayOpen: PropTypes.bool,
-  changeQuery:PropTypes.func,
+  changeQuery: PropTypes.func,
 };
 
 AllDayOpenCheckBox.defaultProps = {
