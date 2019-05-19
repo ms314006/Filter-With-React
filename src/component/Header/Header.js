@@ -8,16 +8,17 @@ const Header = (props) => {
   const { searchWord, } = props;
   return (
     <>
-      <div className={styles.header_title_block}>
+      <div data-testid="headerTitleBlock" className={styles.header_title_block}>
         <div className={styles.header_title}>
           HavaFun
         </div>
       </div>
-      <div className={styles.header_search_block}>
+      <div data-testid="headerInputBlock" className={styles.header_search_block}>
         <div className={styles.header_search_input_block}>
           <i className="fas fa-search" />
           <input
             type="text"
+            data-testid="keywordInput"
             className={styles.header_search_input}
             placeholder="Explore your own activities"
             value={searchWord}
