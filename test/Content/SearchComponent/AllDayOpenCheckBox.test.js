@@ -15,9 +15,16 @@ describe('test <AllDayOpenCheckBox />', () => {
 
   test('確認點選後 store 的值會變成 true ', () => {
     const { getByTestId, store, } = renderWithRedux(<AllDayOpenCheckBox />);
+    expect(getByTestId('allDayOpen').checked).toBe(false);
+    expect(store.getState().searchQuery.allDayOpen).toBe(false);
+    
     fireEvent.click(getByTestId('allDayOpen'));
     expect(getByTestId('allDayOpen').checked).toBe(true);
     expect(store.getState().searchQuery.allDayOpen).toBe(true);
+
+    fireEvent.click(getByTestId('allDayOpen'));
+    expect(getByTestId('allDayOpen').checked).toBe(false);
+    expect(store.getState().searchQuery.allDayOpen).toBe(false);
   });
 
   test('確認資料有沒有正確被篩選', () => {
