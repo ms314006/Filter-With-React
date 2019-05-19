@@ -36,7 +36,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  changeSearchQuery: () => { console.log('changeSearchQuery'); },
+  changeSearchQuery: () => { },
   searchWord: '',
 };
 
