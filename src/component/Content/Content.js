@@ -18,7 +18,10 @@ const Content = (props) => {
       <SideSearchBlock />
       <TopSearchBlock />
       <HashRouter>
-        <div className={styles.content_data_block}>
+        <div
+          data-testid="conetntBlock"
+          className={styles.content_data_block}
+        >
           <Switch>
             <Route exact path="/" component={DataList} />
             <Route path="/informaction/:Id" component={Information} />
