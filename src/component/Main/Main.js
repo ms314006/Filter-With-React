@@ -4,7 +4,7 @@ import Content from '../Content';
 import styles from './index.scss';
 
 const Main = () => (
-  <div className={styles.main_block}>
+  <div data-testid="mainBlock" className={styles.main_block}>
     <Header />
     <Content />
   </div>
