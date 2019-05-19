@@ -8,6 +8,7 @@ const FreeSelect = (props) => {
   const { free, } = props;
   return (
     <select
+      data-testid="freeSelect"
       className={styles.search_free_option}
       value={free}
       onChange={(e) => {
