@@ -3,8 +3,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render, cleanup } from 'react-testing-library';
 import { toBeInTheDocument } from 'jest-dom';
-import DataList from '../../../src/component/Content/DataList';
-import reducer from '../../../src/reducer/filter.js';
+import DataList from '../../../../src/component/Content/DataList';
+import reducer from '../../../../src/reducer/filter.js';
 
 expect.extend({ toBeInTheDocument, });
 

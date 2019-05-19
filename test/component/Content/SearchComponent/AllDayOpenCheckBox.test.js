@@ -2,8 +2,8 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render, fireEvent, cleanup } from 'react-testing-library';
-import AllDayOpenCheckBox from '../../../src/component/Content/SearchComponent/AllDayOpenCheckbox';
-import reducer from '../../../src/reducer/filter.js';
+import AllDayOpenCheckBox from '../../../../src/component/Content/SearchComponent/AllDayOpenCheckbox';
+import reducer from '../../../../src/reducer/filter.js';
 
 const renderWithRedux = (ui, { initialState, store = createStore(reducer, initialState), } = {}) => ({
   ...render(<Provider store={store}>{ui}</Provider>),

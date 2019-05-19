@@ -2,7 +2,7 @@ import React from 'react';
 import { createMemoryHistory } from 'history';
 import { Router, HashRouter } from 'react-router-dom';
 import { render, fireEvent, cleanup } from 'react-testing-library';
-import Data from '../../../../src/component/Content/DataList/Data';
+import Data from '../../../../../src/component/Content/DataList/Data';
 
 
 const props = {

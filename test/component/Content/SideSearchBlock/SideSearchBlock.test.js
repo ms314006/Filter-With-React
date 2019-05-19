@@ -3,8 +3,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render, cleanup } from 'react-testing-library';
 import { toBeInTheDocument } from 'jest-dom';
-import SideSearchBlock from '../../../src/component/Content/SideSearchBlock';
-import reducer from '../../../src/reducer/filter.js';
+import SideSearchBlock from '../../../../src/component/Content/SideSearchBlock';
+import reducer from '../../../../src/reducer/filter.js';
 
 expect.extend({ toBeInTheDocument, });
 

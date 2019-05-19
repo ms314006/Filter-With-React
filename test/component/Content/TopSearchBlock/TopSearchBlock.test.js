@@ -3,8 +3,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render, fireEvent, cleanup } from 'react-testing-library';
 import { toBeInTheDocument } from 'jest-dom';
-import TopSearchBlock from '../../../src/component/Content/TopSearchBlock';
-import reducer from '../../../src/reducer/filter.js';
+import TopSearchBlock from '../../../../src/component/Content/TopSearchBlock';
+import reducer from '../../../../src/reducer/filter.js';
 
 expect.extend({ toBeInTheDocument, });
 

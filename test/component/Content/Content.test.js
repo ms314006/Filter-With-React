@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import { render, cleanup } from 'react-testing-library';
 import { toBeInTheDocument } from 'jest-dom';
 import fetchMock from 'fetch-mock';
-import Content from '../../src/component/Content';
-import reducer from '../../src/reducer/filter.js';
+import Content from '../../../src/component/Content';
+import reducer from '../../../src/reducer/filter.js';
 
 expect.extend({ toBeInTheDocument, });
 

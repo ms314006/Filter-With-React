@@ -5,8 +5,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render, fireEvent, cleanup } from 'react-testing-library';
 import { toBeInTheDocument } from 'jest-dom';
-import Information from '../../../src/component/Content/Information';
-import reducer from '../../../src/reducer/filter.js';
+import Information from '../../../../src/component/Content/Information';
+import reducer from '../../../../src/reducer/filter.js';
 
 expect.extend({ toBeInTheDocument, });
 

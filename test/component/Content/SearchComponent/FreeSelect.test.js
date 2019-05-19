@@ -2,8 +2,8 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render, fireEvent, cleanup } from 'react-testing-library';
-import FreeSelect from '../../../src/component/Content/SearchComponent/FreeSelect';
-import reducer from '../../../src/reducer/filter.js';
+import FreeSelect from '../../../../src/component/Content/SearchComponent/FreeSelect';
+import reducer from '../../../../src/reducer/filter.js';
 
 const renderWithRedux = (ui, { initialState, store = createStore(reducer, initialState), } = {}) => ({
   ...render(<Provider store={store}>{ui}</Provider>),
