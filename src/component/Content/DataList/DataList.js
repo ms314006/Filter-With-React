@@ -17,7 +17,7 @@ const DataList = (props) => {
 
   return (
     <>
-      <div className={styles.search_count_text}>
+      <div data-testid="dataCountText" className={styles.search_count_text}>
         Showing
         <span className={styles.search_result_count}>
         &nbsp;
@@ -26,11 +26,14 @@ const DataList = (props) => {
         </span>
         results by…
       </div>
-      <div className={styles.seatch_tag_block}>
+      <div
+        data-testid="searchTagBlock"
+        className={styles.search_tag_block}
+      >
         { free !== ''
           ? (
             <Tag closable onClose={() => { props.changeSearchQuery({ free: '', }); }}>
-              {free === 'Y' ? '免費入場' : '需付費入場'}
+              <span data-testid="freeTag">{free === 'Y' ? '免費入場' : '需付費入場'}</span>
             </Tag>
           )
           : null
@@ -38,17 +41,20 @@ const DataList = (props) => {
         { allDayOpen
           ? (
             <Tag closable onClose={() => { props.changeSearchQuery({ allDayOpen: false, }); }}>
-              全天候開放
+              <span data-testid="allDayOprnTag">全天候開放</span>
             </Tag>
           )
           : null
         }
       </div>
-      {
-        filterDataList.slice((page - 1) * pageSize, page * pageSize).map(data => <Data key={data.Id} data={data} />)
-      }
+      <div data-testid="dataListBlock">
+        {
+          filterDataList.slice((page - 1) * pageSize, page * pageSize).map(data => <Data key={data.Id} data={data} />)
+        }
+      </div>
       <div className={styles.pagination_block}>
         <Pagination
+          data-testid="paginationBlock"
           defaultCurrent={1}
           total={filterDataList.length}
           onChange={(page, pageSize) => { props.changeSearchQuery({ page, pageSize, }); }}

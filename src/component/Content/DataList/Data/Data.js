@@ -8,23 +8,40 @@ const Data = (props) => {
   const { data, } = props;
   return (
     <div className={styles.data_block}>
-      <div className={styles.image_block} style={{ backgroundImage: `url(${data.Picture1})`, }} />
+      <div
+        data-testid="img"
+        className={styles.image_block}
+        style={{ backgroundImage: `url(${data.Picture1})`, }}
+      />
       <div className={styles.content_block}>
         <div className={styles.name_block}>
-          <Link to={`/informaction/${data.Id}`}>{data.Name}</Link>
+          <Link
+            data-testid="name"
+            to={`/informaction/${data.Id}`}
+          >
+            {data.Name}
+          </Link>
         </div>
-        <div className={styles.description_block}>
+        <div
+          data-testid="description"
+          className={styles.description_block}
+        >
           {`${data.Description.slice(0, 60)}...`}
         </div>
         <div className={styles.zone_block}>
-          <Tag className={styles.zone_tag}>{data.Zone}</Tag>
+          <Tag
+            data-testid="zone"
+            className={styles.zone_tag}
+          >
+            {data.Zone}
+          </Tag>
         </div>
         <div className={styles.detail_block}>
-          <div>
+          <div data-testid="add">
             <i className="fas fa-map-marker-alt" />
             {data.Add}
           </div>
-          <div>
+          <div data-testid="openTime">
             <i className="far fa-calendar-alt" />
             {data.Opentime}
           </div>

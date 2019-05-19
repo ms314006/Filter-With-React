@@ -1,4 +1,6 @@
 import React from 'react';
+import { createMemoryHistory } from 'history';
+import { Router, HashRouter } from 'react-router-dom';
 import { render, fireEvent, cleanup } from 'react-testing-library';
 import Data from '../../../../src/component/Content/DataList/Data';
 
@@ -20,12 +22,32 @@ describe('test <Data />', () => {
   afterEach(cleanup);
 
   test('render 是否正常', () => {
-    const { getByTestId, } = render(<Data {...props} />);
-    expect(getByTestId('name').innerHTML).toBe(props.data.name);
+    const { getByTestId, } = render(
+      <HashRouter>
+        <Data {...props} />
+      </HashRouter>
+    );
+
+    expect(getByTestId('name').innerHTML).toBe(props.data.Name);
     expect(getByTestId('img').style.backgroundImage).toBe(`url(${props.data.Picture1})`);
-    expect(getByTestId('description').innerHTML).toBe(props.data.describe.slice(0, 60));
+    expect(getByTestId('description').innerHTML).toBe(`${props.data.Description.slice(0, 60)}...`);
     expect(getByTestId('zone').innerHTML).toBe(props.data.Zone);
-    expect(getByTestId('add').innerHTML).toBe(props.data.Add);
-    expect(getByTestId('openTime').innerHTML).toBe(props.data.Opentime);
+    expect(getByTestId('add').innerHTML).toMatch(props.data.Add);
+    expect(getByTestId('openTime').innerHTML).toMatch(props.data.Opentime);
+
   });
+
+  test('Link 是否會正確改變路由', () => {
+    const route = '/';
+    const history = createMemoryHistory({ initialEntries: [route], });
+    const { getByTestId, } = render(
+      <Router history={history}>
+        <Data {...props} />
+      </Router>
+    );
+    expect(history.location.pathname).toBe('/');
+    fireEvent.click(getByTestId('name'));
+    expect(history.location.pathname).toBe('/informaction/C1_397000000A_000009');
+  });
+
 });
